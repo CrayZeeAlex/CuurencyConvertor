@@ -13,7 +13,7 @@ const ConvertorTrue = (props) => {
 			setResult('')
 			return
 		}
-
+		console.log("test")
 		
 		switch(selectLeft){
 			case "UAH":
