@@ -8,8 +8,6 @@ const ConvertorTrue = (props) => {
   const selectLeftRef = useRef();
   const selectRightRef = useRef();
  
- 
- 
   function CalculateValue(value, leftCurrency, rightCurrency) {
     console.log(value, leftCurrency, rightCurrency)
     switch (leftCurrency) {
@@ -32,10 +30,7 @@ const ConvertorTrue = (props) => {
           case "USD":
             return parseFloat(value);
           case "EUR":
-            return (
-              (parseFloat(value) * props.rates.USD) /
-              props.rates.EUR
-            ).toFixed(2);
+            return ((parseFloat(value) * props.rates.USD) / props.rates.EUR).toFixed(2);
           default:
             break;
         }
@@ -45,10 +40,7 @@ const ConvertorTrue = (props) => {
           case "UAH":
             return (parseFloat(value) * props.rates.EUR).toFixed(2);
           case "USD":
-            return (
-              (parseFloat(value) * props.rates.EUR) /
-              props.rates.USD
-            ).toFixed(2);
+            return ((parseFloat(value) * props.rates.EUR) / props.rates.USD).toFixed(2);
           case "EUR":
             return parseFloat(value);
           default:
@@ -59,8 +51,6 @@ const ConvertorTrue = (props) => {
         break;
     }
   }
- 
-  // if we typed right = left show should the correct value
  
   const handleLeftValueChange = (newValue) => {
     setMostRecentInput('left')
@@ -118,7 +108,6 @@ const ConvertorTrue = (props) => {
             id="left"
             value={leftInputValue}
             onInput={(event) => handleLeftValueChange(event.target.value)}
-            // onInput={event => setInput(event.target.value)}
           />
         </div>
       </div>
@@ -142,8 +131,6 @@ const ConvertorTrue = (props) => {
             id="right"
             value={rightInputValue}
             onInput={(event) => handleRightValueChange(event.target.value)}
-            // onInput={setFromRight}
-            // onInput={event => setFromRight(event.target.value)}
           />
         </div>
       </div>
